@@ -3,6 +3,7 @@ package fcm
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 )
 
 var (
@@ -159,7 +160,7 @@ func (r *Response) UnmarshalJSON(data []byte) error {
 		if val, ok := errMap[response.Error]; ok {
 			r.Error = val
 		} else {
-			r.Error = ErrUnknown
+			r.Error = errors.New(fmt.Sprintf("unknown error: %s", response.Error))
 		}
 	}
 
@@ -193,7 +194,7 @@ func (r *Result) UnmarshalJSON(data []byte) error {
 		if val, ok := errMap[result.Error]; ok {
 			r.Error = val
 		} else {
-			r.Error = ErrUnknown
+			r.Error = errors.New(fmt.Sprintf("unknown error: %s", result.Error))
 		}
 	}
 
