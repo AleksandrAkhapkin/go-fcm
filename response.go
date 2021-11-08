@@ -60,20 +60,20 @@ var (
 
 var (
 	errMap = map[string]error{
-		"MissingRegistration":       ErrMissingRegistration,
-		"InvalidRegistration":       ErrInvalidRegistration,
-		"NotRegistered":             ErrNotRegistered,
-		"InvalidPackageName":        ErrInvalidPackageName,
-		"MismatchSenderId":          ErrMismatchSenderID,
-		"MessageTooBig":             ErrMessageTooBig,
-		"InvalidDataKey":            ErrInvalidDataKey,
-		"InvalidTtl":                ErrInvalidTTL,
-		"Unavailable":               ErrUnavailable,
-		"InternalServerError":       ErrInternalServerError,
-		"DeviceMessageRateExceeded": ErrDeviceMessageRateExceeded,
-		"TopicsMessageRateExceeded": ErrTopicsMessageRateExceeded,
-		"InvalidParameters":         ErrInvalidParameters,
-		"InvalidApnsCredential":     ErrInvalidApnsCredential,
+		"MissingRegistration":          ErrMissingRegistration,
+		"InvalidRegistration":          ErrInvalidRegistration,
+		"NotRegistered":                ErrNotRegistered,
+		"InvalidPackageName":           ErrInvalidPackageName,
+		"MismatchSenderId":             ErrMismatchSenderID,
+		"MessageTooBig":                ErrMessageTooBig,
+		"InvalidDataKey":               ErrInvalidDataKey,
+		"InvalidTtl":                   ErrInvalidTTL,
+		"Unavailable":                  ErrUnavailable,
+		"InternalServerError":          ErrInternalServerError,
+		"DeviceMessageRateExceeded":    ErrDeviceMessageRateExceeded,
+		"TOPICS_MESSAGE_RATE_EXCEEDED": ErrTopicsMessageRateExceeded,
+		"InvalidParameters":            ErrInvalidParameters,
+		"InvalidApnsCredential":        ErrInvalidApnsCredential,
 	}
 )
 
