@@ -1,6 +1,7 @@
 package fcm
 
 import (
+	"errors"
 	"net"
 	"time"
 )
@@ -19,7 +20,9 @@ func retry(fn func() error, attempts int) error {
 		}
 
 		if tErr, ok := err.(net.Error); !ok || !tErr.Temporary() {
-			return err
+			if !errors.Is(err, ErrTopicsMessageRateExceeded) {
+				return err
+			}
 		}
 
 		attempt++

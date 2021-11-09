@@ -114,7 +114,10 @@ func (c *Client) SendWithRetryWithContext(ctx context.Context, msg *Message, ret
 		defer cancel()
 		var er error
 		resp, er = c.send(ctx, data)
-		return er
+		if er != nil {
+			return er
+		}
+		return resp.Error
 	}, retryAttempts)
 	if err != nil {
 		return nil, err
